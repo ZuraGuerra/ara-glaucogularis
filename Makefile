@@ -23,8 +23,6 @@ node:
 	##### Installing Node and NPM...
 	sudo curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 	sudo yum -y install nodejs
-	# sudo rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-	# sudo yum install npm
 
 install:
 	##### Installing Ghost...
