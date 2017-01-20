@@ -27,7 +27,7 @@ node:
 install:
 	##### Installing Ghost...
 	mkdir -p /var/www/ghost && cd /var/www/ghost
-	sudo curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
+	sudo curl -L -O https://ghost.org/zip/ghost-latest.zip
 	sudo unzip ghost-*.zip
 	sudo rm -rf ghost-*.zip
 	mv config.example.js config.js
