@@ -26,7 +26,9 @@ node:
 
 install:
 	##### Installing Ghost...
-	mkdir -p /var/www/ghost && cd /var/www/ghost
+	mkdir -p /var/www/ghost
+	@# !!! Seems like Make is skipping this step
+	cd /var/www/ghost
 	sudo curl -L -O https://ghost.org/zip/ghost-latest.zip
 	sudo unzip ghost-*.zip
 	sudo rm -rf ghost-*.zip
