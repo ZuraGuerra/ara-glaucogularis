@@ -10,9 +10,7 @@
 # · run         #
 #---------------#
 
-all:
-	##### STARTING GHOST SETUP...
-	packages node install run
+all: packages node install run
 
 packages:
 	##### Installing required common packages...
@@ -27,13 +25,13 @@ node:
 install:
 	##### Installing Ghost...
 	mkdir -p /var/www/ghost
-	@# See this to understand the addition of `<command>; \`:
+	@# See this to understand the addition of `<command> && \`:
 	@# http://stackoverflow.com/a/1789616/4573662
-	cd /var/www/ghost; \
-	sudo curl -L -O https://ghost.org/zip/ghost-latest.zip; \
-	sudo unzip ghost-*.zip; \
-	sudo rm -rf ghost-*.zip; \
-	mv config.example.js config.js; \
+	cd /var/www/ghost && \
+	sudo curl -L -O https://ghost.org/zip/ghost-latest.zip && \
+	sudo unzip ghost-*.zip && \
+	sudo rm -rf ghost-*.zip && \
+	mv config.example.js config.js && \
 	#sed -i 's/2368/80/g' config.js && sed -i 's/127.0.0.1/0.0.0.0/g' config.js
 	sudo npm install --production
 
