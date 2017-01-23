@@ -36,7 +36,7 @@ install:
 
 run:
 	##### Running Ghost in background...
-	cd /var/www/ghost; \
+	cd /var/www/ghost && \
 	sudo screen -S Ghost -d -m npm start --production
 
 .PHONY: packages node install all
