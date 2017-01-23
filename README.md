@@ -33,4 +33,4 @@ Does all of the above in that order.
 ---
 ![Mazing Studio](https://avatars1.githubusercontent.com/u/19610766?v=3&s=200)
 
-Made with 💙 for [Mazing Studio](://mazing.studio).
+Made with 💙 for [Mazing Studio](https://mazing.studio).
