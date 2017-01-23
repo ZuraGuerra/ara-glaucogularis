@@ -39,4 +39,4 @@ run:
 	cd /var/www/ghost && \
 	npm start --production
 
-.PHONY: packages node install all
+.PHONY: packages node install all run
