@@ -32,7 +32,6 @@ install:
 	sudo unzip ghost-*.zip && \
 	sudo rm -rf ghost-*.zip && \
 	mv config.example.js config.js && \
-	#sed -i 's/2368/80/g' config.js && sed -i 's/127.0.0.1/0.0.0.0/g' config.js
 	sudo npm install --production
 
 run:
