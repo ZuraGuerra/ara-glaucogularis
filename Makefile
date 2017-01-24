@@ -1,7 +1,7 @@
 # Install the latest version of Ghost on CentOS
 
-GHOST_PORT := $(shell echo $$GHOST_PORT)
-GHOST_HOST := $(shell echo $$GHOST_HOST)
+GHOST_PORT ?= 2368
+GHOST_HOST ?= 127.0.0.1
 
 #---------------#
 #  _T_A_S_K_S_  #
@@ -17,12 +17,11 @@ all: packages node install run
 
 packages:
 	##### Installing required common packages...
-	yum -y install unzip curl wget glibc-* screen @Development Tools
-	yum -y update
+	yum -y install unzip curl wget glibc-* @Development Tools
 
 node:
 	##### Installing Node and NPM...
-	curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+	curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && \
 	yum -y install nodejs
 
 install:
@@ -35,8 +34,7 @@ install:
 	unzip ghost-*.zip && \
 	rm -rf ghost-*.zip && \
 	mv config.example.js config.js && \
-	sed -i 's/2368/$(GHOST_HOST)/g' config.js && \
-	sed -i 's/127.0.0.1/$(GHOST_HOST)/g' config.js && \
+	sed -i 's/2368/$(GHOST_HOST)/g;s/127.0.0.1/$(GHOST_HOST)/g' config.js && \
 	npm install --production
 
 run:
